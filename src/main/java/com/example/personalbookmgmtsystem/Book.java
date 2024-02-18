@@ -1,17 +1,21 @@
 package com.example.personalbookmgmtsystem;
 
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
-import lombok.Value;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 
-import java.util.Date;
-import java.util.List;
-
-@Value
-@RequiredArgsConstructor
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+//@RequiredArgsConstructor
 public class Book {
-
-    private String id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
     private String subtitle;
     private String isbn13;
@@ -20,6 +24,4 @@ public class Book {
 //    private String publisher;
 //    private Date publishing_date;
 //    private int page_count;
-
-
 }
